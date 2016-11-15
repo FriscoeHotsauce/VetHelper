@@ -15,5 +15,13 @@ This will let you run the project. Click on the  V  looking icon on the top righ
 - Give the configuration a name
 - Press the Play button, and an apache server will be built and running on port 8080
 
+## If you get a sdk error
+Click the angry red text "configure" 
+- Select the java JDK if you can
+- Otherwise, select "new"
+- If it DOES automatically find your java JDK, just press ok
+- If it DOES NOT automatically find your java jdk, navigate to the root directory and press OK
+- If you don't have Java 1.8 installed, do that
+
 ## Access the application
-- In your web browser, hit the url localhost:8080/home/page
+- In your web browser, hit the url localhost:8080/home/page (Should display hello world)
