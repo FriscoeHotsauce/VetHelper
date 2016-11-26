@@ -50,3 +50,5 @@ fabric.properties
 .idea/libraries/Maven__org_eclipse_jdt_core_compiler_ecj_4_4_2.xml
 src/test/java/iastate/vethelper/
 target/
+/vetmedhelper.iml
+/.idea/
