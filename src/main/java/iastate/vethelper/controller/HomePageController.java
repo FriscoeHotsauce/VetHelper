@@ -1,14 +1,30 @@
 package iastate.vethelper.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+import java.util.Map;
+
+@Controller
 @RequestMapping("home")
 public class HomePageController {
 
+    private static final Logger LOG = LoggerFactory.getLogger(HomePageController.class);
+
     @RequestMapping("/page")
-    public String homePage(){
-        return "Hello World";
+    public String homePage(Model model)
+    {
+        LOG.info("controller is being hit");
+        return "home";
+    }
+
+    @RequestMapping("/hello")
+    public String helloWorld(){
+        return "Hello World!";
     }
 }
