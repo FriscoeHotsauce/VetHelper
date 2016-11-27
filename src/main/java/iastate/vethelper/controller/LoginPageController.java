@@ -1,5 +1,8 @@
 package iastate.vethelper.controller;
 
+/**
+ * Created by Thomas Kearney on 11/27/2016.
+ */
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -11,16 +14,15 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 @Controller
-@RequestMapping("home")
-public class HomePageController {
-
-    private static final Logger LOG = LoggerFactory.getLogger(HomePageController.class);
+@RequestMapping("login")
+public class LoginPageController {
+    private static final Logger LOG = LoggerFactory.getLogger(LoginPageController.class);
 
     @RequestMapping("/page")
     public String homePage(Model model)
     {
         LOG.info("controller is being hit");
-        return "home";
+        return "login";
     }
 
     @RequestMapping("/hello")
@@ -28,5 +30,3 @@ public class HomePageController {
         return "Hello World!";
     }
 }
-
-

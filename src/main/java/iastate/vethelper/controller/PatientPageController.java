@@ -10,17 +10,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 
+/**
+ * Created by Thomas Kearney on 11/27/2016.
+ */
 @Controller
-@RequestMapping("home")
-public class HomePageController {
-
-    private static final Logger LOG = LoggerFactory.getLogger(HomePageController.class);
+@RequestMapping("patient")
+public class PatientPageController {
+    private static final Logger LOG = LoggerFactory.getLogger(PatientPageController.class);
 
     @RequestMapping("/page")
     public String homePage(Model model)
     {
         LOG.info("controller is being hit");
-        return "home";
+        return "patient";
     }
 
     @RequestMapping("/hello")
@@ -28,5 +30,3 @@ public class HomePageController {
         return "Hello World!";
     }
 }
-
-

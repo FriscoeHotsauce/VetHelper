@@ -11,16 +11,16 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 @Controller
-@RequestMapping("home")
-public class HomePageController {
+@RequestMapping("newAdminPage")
+public class AdminPageController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(HomePageController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AdminPageController.class);
 
     @RequestMapping("/page")
     public String homePage(Model model)
     {
         LOG.info("controller is being hit");
-        return "home";
+        return "newAdminPage";
     }
 
     @RequestMapping("/hello")
@@ -28,5 +28,3 @@ public class HomePageController {
         return "Hello World!";
     }
 }
-
-
