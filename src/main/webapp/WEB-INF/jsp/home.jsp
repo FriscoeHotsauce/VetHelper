@@ -14,13 +14,16 @@
     <br>
     Search Patient
     <br>
-    <input type="text" name="fname"><br>
+    <input type="text" name="searchName"><br>
     <input type="submit" value="Submit"><br>
     <br>
     <br>
     Add New Patient<br>
-    <input type="text" name="fname" value="Enter patient name here"><br>
-    <input type="text" name="fname" value="Enter owner name here"><br>
-    <input type="submit" value="Submit"><br>
+    <form action="#" th:action="@(/page}" th:object="${patient}" method="post" align="center">
+        <input type="text" th:field="*{name}" name="patientNameInput" value="Enter patient name here"><br>
+        <input type="text" th:field="*{ownerName}"name="ownerNameInput" value="Enter owner name here"><br>
+        <input type="submit" name="newPatientSubmit" value="Submit"><br>
+    </form>
+
 </p>
 </html>
