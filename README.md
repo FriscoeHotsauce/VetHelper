@@ -38,7 +38,7 @@ class annotated with @Controller and it will resolve to the JSP.
 
 ## Setting up the MySQL database
 Install MySQL
-- Go to [the MySQL downloads page](http://dev.mysql.com/downloads) Go to http://dev.mysql.com/downloads/ and download MySQL Community Server
+- Go to [the MySQL downloads page](http://dev.mysql.com/downloads) and download MySQL Community Server
 - Start the intallation. In the Type and Networking tab, enter 3306 in Port Number
 - In the Accounts and Roles tab, enter vethelper for MySQL RootPassword.
 - In the Windows Service tab, enter vethelper for Windows Service Name.
