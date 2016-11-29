@@ -38,10 +38,10 @@
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Help</a></li>
             </ul>
-            <form th:action="@(/search}" th:object="${mmrNumber}" method="post" class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="Search MMR Number" th:field="*{id}" name="id">
-                <button class="form-control btn btn-primary" type="submit" name="searchPatient">Search</button>
-            </form>
+            <form action="search" th:object="${mmrNumber}" method="post" class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search MMR Number" th:field="*{id}" name="id">
+            <button class="form-control btn btn-primary" type="submit" name="searchPatient">Search</button>
+        </form>
         </div>
     </div>
 </nav>
