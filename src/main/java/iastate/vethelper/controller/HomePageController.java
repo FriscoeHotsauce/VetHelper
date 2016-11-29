@@ -41,7 +41,6 @@ public class HomePageController {
         LOG.info("getName: " + patient.getName());
         LOG.info("getOwnerName: " + patient.getOwnerName());
         LOG.info("getMMR: " + patient.getMMR());
-
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
