@@ -9,7 +9,6 @@
     <a href="">Sign Out</a> <a href="">Add Admin</a>
 </p>
 <h1 align="center">VetHelper</h1>
-</body>
 <p align="center">
     <br>
     <br>
@@ -21,9 +20,13 @@
     <br>
     Add New Patient<br>
     <form action="#" th:action="@(/page}" th:object="${patient}" method="post" align="center">
-        <input type="text" th:field="*{name}" name="patientNameInput" value="Enter patient name here"><br>
-        <input type="text" th:field="*{ownerName}"name="ownerNameInput" value="Enter owner name here"><br>
+        <input type="text" th:field="*{name}" name="name" value="Enter patient name here"><br>
+        <input type="text" th:field="*{ownerName}"name="ownerName" value="Enter owner name here"><br>
+        <input type="text" th:field="*{MMR}"name="MMR" value="Enter MMR name here"><br>
         <input type="submit" name="newPatientSubmit" value="Submit"><br>
     </form>
 </p>
+
+</body>
+
 </html>

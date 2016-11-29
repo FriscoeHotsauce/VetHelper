@@ -9,7 +9,7 @@ public class Patient
     private String name;
 
 
-    private int MMR;
+    private String MMR;
 
     public String getOwnerName() {
         return ownerName;
@@ -27,11 +27,11 @@ public class Patient
         this.name = name;
     }
 
-    public int getMMR() {
+    public String getMMR() {
         return MMR;
     }
 
-    public void setMMR(int MMR) {
+    public void setMMR(String MMR) {
         this.MMR = MMR;
     }
 

@@ -9,12 +9,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 <p>
 <p th:text="'Patient Name: ' + ${patient.name}" />
 <p th:text="'Owner Name: ' + ${patient.ownerName}" />
-<p th:text="'Patient MMR: ' + ${patient.ownerName}" />
+<p th:text="'Patient MMR: ' + ${patient.MMR}" />
     <br>
     <br>
     <br>
