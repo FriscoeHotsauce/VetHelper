@@ -1,6 +1,6 @@
 package iastate.vethelper.controller;
 
-import iastate.vethelper.Patient;
+import iastate.vethelper.Entry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -21,10 +21,7 @@ public class HomePageController {
     public String homePage(Model model)
     {
         LOG.info("controller is being hit");
-        Patient patient = new Patient();
-        patient.setName("NAME");
-        patient.setOwnerName("OWNER NAME");
-        patient.setMMR("123");
+        model.addAttribute("entry", new Entry());
         return "home";
     }
 
@@ -34,18 +31,24 @@ public class HomePageController {
     }
 
     @RequestMapping(value="/page", method = RequestMethod.POST)
-    public String addPatient(@ModelAttribute(value="patient") Patient patient) {
+    public String addEntry(@ModelAttribute(value="entry") Entry entry) {
         LOG.info("Post request reached");
-        LOG.info("getName: " + patient.getName());
-        LOG.info("getOwnerName: " + patient.getOwnerName());
-        LOG.info("getMMR: " + patient.getMMR());
+        LOG.info("getMMR: " + entry.getMMR());
 
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vethelper", "root" , "vethelper");
             Statement statement = con.createStatement();
-            String command = "insert into patients values( \"" + patient.getName() + "\" , \" " + patient.getOwnerName() + "\" , \" " + Integer.parseInt(patient.getMMR()) + "\")";
+            String command = "insert into entry values(\""
+                    + entry.getMMR() + "\" , \" "
+                    + entry.getPCV() + "\" , \" "
+                    + entry.getAzo() + "\" , \" "
+                    + entry.getGlu() + "\" , \" "
+                    + entry.getLac() + "\" , \" "
+                    + entry.getKet() + "\" , \" "
+                    + entry.getPT() + "\" , \" "
+                    + entry.getPTT() + "\")";
                 statement.executeUpdate(command);
         }
 

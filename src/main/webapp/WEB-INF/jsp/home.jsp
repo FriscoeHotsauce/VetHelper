@@ -49,8 +49,7 @@
     <div class="row">
         <div class="col-md-12 main">
             <br>
-            <h1 class="page-header">Dashboard</h1>
-
+            <h1 class="page-header">Recent Entries</h1>
             <%--<div class="row placeholders">--%>
                 <%--<div class="col-xs-6 col-sm-3 placeholder">--%>
                     <%--<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="--%>
@@ -113,25 +112,23 @@
         </div>
         <h1 class="page-header">Add New Entry</h1>
         <div class="col-md-12">
-            <form action="#" th:action="@(/page}" th:object="${patient}" method="post" align="center">
+            <form action="#" th:action="@(/page}" th:object="${entry}" method="post">
                 <div class="form-group">
-                    <input class="form-control" type="text" th:field="*{name}" name="name" placeholder="Enter patient name"><br>
-                    <input class="form-control" type="text" th:field="*{ownerName}"name="ownerName" placeholder="Enter owner name"><br>
-                    <input class="form-control" type="text" th:field="*{MMR}"name="MMR" placeholder="Enter MMR number"><br>
-                    <button class="form-control btn btn-primary" type="submit" name="newPatientSubmit">Submit<br>
+                    <input class="form-control" type="text" th:field="*{MMR}" name="MMR" placeholder="Enter MMR #"><br>
+                    <input class="form-control" type="text" th:field="*{PCV}" name="PCV" placeholder="Packed Cell Volume"><br>
+                    <input class="form-control" type="text" th:field="*{TP}" name="TP" placeholder="Total Protein"><br>
+                    <input class="form-control" type="text" th:field="*{Azo}" name="Azo" placeholder="Azostix"><br>
+                    <input class="form-control" type="text" th:field="*{Glu}" name="Glu" placeholder="Glucose"><br>
+                    <input class="form-control" type="text" th:field="*{Lac}" name="Lac" placeholder="Lactate"><br>
+                    <input class="form-control" type="text" th:field="*{Ket}" name="Ket" placeholder="Ketones"><br>
+                    <input class="form-control" type="text" th:field="*{PT}" name="PT" placeholder="Prothrombin time"><br>
+                    <input class="form-control" type="text" th:field="*{PTT}" name="PTT" placeholder="Partial Prothrombin time"><br>
+                    <button class="form-control btn btn-primary" type="submit" name="newEntrytSubmit">Submit</button><br>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-<script>
-    jQuery(document).ready(function($) {
-        $(".clickable-row").click(function() {
-            window.document.location = "/home/page/?entry=" + $(this).data("id");
-        });
-    });
-</script>
 
 </body>
 </html>
