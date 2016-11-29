@@ -1,22 +1,22 @@
 package iastate.vethelper.controller;
 
-import iastate.vethelper.Patient;
-import jdk.nashorn.internal.ir.RuntimeNode;
+import iastate.vethelper.entity.Patient;
+import iastate.vethelper.repo.PatientRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.Map;
 
 @Controller
 @RequestMapping("home")
 public class HomePageController {
+
+    @Autowired
+    PatientRepo patientRepo;
 
     private static final Logger LOG = LoggerFactory.getLogger(HomePageController.class);
 
@@ -42,6 +42,8 @@ public class HomePageController {
         LOG.info("getName: " + patient.getName());
         LOG.info("getOwnerName: " + patient.getOwnerName());
         LOG.info("getMMR: " + patient.getMMR());
+        patientRepo.save(patient);
+        System.out.println(patientRepo.findAll());
         return "patient";
     }
 
