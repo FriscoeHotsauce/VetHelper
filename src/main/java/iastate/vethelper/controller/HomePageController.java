@@ -22,10 +22,14 @@ public class HomePageController {
 
     private static final Logger LOG = LoggerFactory.getLogger(HomePageController.class);
 
-    @RequestMapping(value="/page", method=RequestMethod.GET)
+    @RequestMapping(value="/page", method = RequestMethod.GET)
     public String homePage(Model model)
     {
         LOG.info("controller is being hit");
+        Patient patient = new Patient();
+        patient.setName("NAME");
+        patient.setOwnerName("OWNER NAME");
+        patient.setMMR("123");
         return "home";
     }
 
@@ -34,10 +38,8 @@ public class HomePageController {
         return "Hello World!";
     }
 
-    @RequestMapping(value="/page", method = RequestMethod.POST)
+    @RequestMapping(value="/page/add", method = RequestMethod.POST)
     public String addPatient(@ModelAttribute(value="patient") Patient patient) {
-
-
         LOG.info("Post request reached");
         LOG.info("getName: " + patient.getName());
         LOG.info("getOwnerName: " + patient.getOwnerName());
