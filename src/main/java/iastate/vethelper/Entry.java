@@ -1,88 +1,61 @@
 package iastate.vethelper;
 
-/**
- * Created by Michael Phippen on 11/28/2016.
- */
 public class Entry {
-    private int MMR;
-    private int PCV;
-    private int TP;
-    private int Azo;
-    private int Glu;
-    private int Lac;
-    private int Ket;
-    private int PT;
-    private int PTT;
+    private String MMR;
+    private String date;
+    private String PCV;
+    private String TP;
+    private String AZO;
+    private String GLU;
 
-    public int getMMR() {
+    public String getMMR() {
         return MMR;
     }
 
-    public void setMMR(int MMR) {
+    public void setMMR(String MMR) {
         this.MMR = MMR;
     }
 
-    public int getPCV() {
-        return PCV;
+    public String getDate() {
+        return date;
     }
 
-    public void setPCV(int PCV) {
-        this.PCV = PCV;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public int getTP() {
+    public String getTP() {
         return TP;
     }
 
-    public void setTP(int TP) {
+    public void setTP(String TP) {
         this.TP = TP;
     }
 
-    public int getAzo() {
-        return Azo;
+    public String getAZO() {
+        return AZO;
     }
 
-    public void setAzo(int azo) {
-        Azo = azo;
+    public void setAZO(String AZO) {
+        this.AZO = AZO;
     }
 
-    public int getGlu() {
-        return Glu;
+    public String getGLU() {
+        return GLU;
     }
 
-    public void setGlu(int glu) {
-        Glu = glu;
+    public void setGLU(String GLU) {
+        this.GLU = GLU;
     }
 
-    public int getLac() {
-        return Lac;
+
+    public String getPCV() {
+        return PCV;
     }
 
-    public void setLac(int lac) {
-        Lac = lac;
+    public void setPCV(String PCV) {
+        this.PCV = PCV;
     }
 
-    public int getKet() {
-        return Ket;
-    }
 
-    public void setKet(int ket) {
-        Ket = ket;
-    }
-
-    public int getPT() {
-        return PT;
-    }
-
-    public void setPT(int PT) {
-        this.PT = PT;
-    }
-
-    public int getPTT() {
-        return PTT;
-    }
-
-    public void setPTT(int PTT) {
-        this.PTT = PTT;
-    }
 }

@@ -38,78 +38,16 @@
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Help</a></li>
             </ul>
-            <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="Search MMR Number">
-            </form>
+            <form action="search" th:object="${mmrNumber}" method="get" class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search MMR Number" th:field="*{id}" name="id">
+            <button class="form-control btn btn-primary" type="submit">Search</button>
+        </form>
         </div>
     </div>
 </nav>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12 main">
-            <br>
-            <h1 class="page-header">Recent Entries</h1>
-            <%--<div class="row placeholders">--%>
-                <%--<div class="col-xs-6 col-sm-3 placeholder">--%>
-                    <%--<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="--%>
-                         <%--width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">--%>
-                    <%--<h4>Label</h4>--%>
-                    <%--<span class="text-muted">Something else</span>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>MMR#</th>
-                        <th>Patient Name</th>
-                        <th>Date Entered</th>
-                        <th>Doctor</th>
-                        <th>Notes</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class='clickable-row' data-id='2'>
-                        <td>1</td>
-                        <td>Fred</td>
-                        <td>11/25/16</td>
-                        <td>Dr. Strange</td>
-                        <td>All better!</td>
-                    </tr>
-                    <tr class='clickable-row' data-id='3'>
-                        <td>2</td>
-                        <td>Sparkles</td>
-                        <td>11/24/16</td>
-                        <td>Dr. Melbourne</td>
-                        <td>Still has a small limp</td>
-                    </tr>
-                    <tr class='clickable-row' data-id='4'>
-                        <td>2</td>
-                        <td>Sparkles</td>
-                        <td>11/1/16</td>
-                        <td>Dr. Sindfer</td>
-                        <td>Broken leg will begin to heal</td>
-                    </tr>
-                    <tr class='clickable-row' data-id='5'>
-                        <td>3</td>
-                        <td>Jumbo</td>
-                        <td>10/24/16</td>
-                        <td>Dr. Potter</td>
-                        <td>False alarm</td>
-                    </tr>
-                    <tr class='clickable-row' data-id='6'>
-                        <td>1</td>
-                        <td>Fred</td>
-                        <td>10/24/16</td>
-                        <td>Dr. Strange</td>
-                        <td>Sudden seizures every other day</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
         <h1 class="page-header">Add New Entry</h1>
         <div class="col-md-12">
             <form action="#" th:action="@(/page}" th:object="${entry}" method="post">
