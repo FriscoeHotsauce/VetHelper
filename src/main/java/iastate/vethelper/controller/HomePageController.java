@@ -25,10 +25,6 @@ public class HomePageController {
     {
         LOG.info("That was a GET request");
         Patient patient = new Patient();
-//        patient.setName("NAME");
-//        patient.setOwnerName("OWNER NAME");
-//        patient.setMMR("123");
-        model.addAttribute("patient", patient);
         return "home";
     }
 
