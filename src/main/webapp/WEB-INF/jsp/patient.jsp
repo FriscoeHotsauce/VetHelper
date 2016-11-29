@@ -26,7 +26,7 @@
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vethelper", "root" , "vethelper");
     Statement statement = con.createStatement();
-    String command = "select * from patients where MMR = " + request.getParameter("mmrNumber");
+    String command = "select * from patients where MMR = " + request.getParameter("id");
     System.out.println(command);
     ResultSet rs = statement.executeQuery(command);
     while(rs.next())

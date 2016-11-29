@@ -38,9 +38,9 @@
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Help</a></li>
             </ul>
-            <form action="search" th:object="${mmrNumber}" method="post" class="navbar-form navbar-right">
+            <form action="search" th:object="${mmrNumber}" method="get" class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search MMR Number" th:field="*{id}" name="id">
-            <button class="form-control btn btn-primary" type="submit" name="searchPatient">Search</button>
+            <button class="form-control btn btn-primary" type="submit">Search</button>
         </form>
         </div>
     </div>
