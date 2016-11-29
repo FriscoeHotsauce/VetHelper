@@ -51,6 +51,7 @@ Create a connection
 - Name the schema vethelper
 - Use the shell or however means you prefer to configure the database. 
 
-Current tables:
-- patients: name varchar(255), owner varchar(255), MMR int(255)
-- entries: MMR int(255), date datetime, PCV int(255), TP int(255), AZO int(255), GLU int(255)
+Copy paste the below into the query tab and click the lightning bolt icon
+
+create table patients (name varchar(255), owner varchar(255), MMR int(255))
+create table entries (MMR int(255), date datetime, PCV int(255), TP int(255), AZO int(255), GLU int(255))
