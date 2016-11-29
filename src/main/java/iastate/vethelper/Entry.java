@@ -24,6 +24,14 @@ public class Entry {
         this.date = date;
     }
 
+    public String getPCV() {
+        return PCV;
+    }
+
+    public void setPCV(String PCV) {
+        this.PCV = PCV;
+    }
+
     public String getTP() {
         return TP;
     }
@@ -47,15 +55,4 @@ public class Entry {
     public void setGLU(String GLU) {
         this.GLU = GLU;
     }
-
-
-    public String getPCV() {
-        return PCV;
-    }
-
-    public void setPCV(String PCV) {
-        this.PCV = PCV;
-    }
-
-
 }

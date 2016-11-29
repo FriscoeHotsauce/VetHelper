@@ -32,14 +32,8 @@
             <a class="navbar-brand" href="#">Vet Helper</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
             <form action="search" th:object="${mmrNumber}" method="get" class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search MMR Number" th:field="*{id}" name="id">
+            <input type="text" class="form-control" placeholder="Search MMR Number" th:field="*{id}" name="id" required="">
             <button class="form-control btn btn-primary" type="submit">Search</button>
         </form>
         </div>
@@ -48,19 +42,16 @@
 
 <div class="container-fluid">
     <div class="row">
+        <br>
         <h1 class="page-header">Add New Entry</h1>
         <div class="col-md-12">
             <form action="#" th:action="@(/page}" th:object="${entry}" method="post">
                 <div class="form-group">
-                    <input class="form-control" type="text" th:field="*{MMR}" name="MMR" placeholder="Enter MMR #"><br>
-                    <input class="form-control" type="text" th:field="*{PCV}" name="PCV" placeholder="Packed Cell Volume"><br>
-                    <input class="form-control" type="text" th:field="*{TP}" name="TP" placeholder="Total Protein"><br>
-                    <input class="form-control" type="text" th:field="*{Azo}" name="Azo" placeholder="Azostix"><br>
-                    <input class="form-control" type="text" th:field="*{Glu}" name="Glu" placeholder="Glucose"><br>
-                    <input class="form-control" type="text" th:field="*{Lac}" name="Lac" placeholder="Lactate"><br>
-                    <input class="form-control" type="text" th:field="*{Ket}" name="Ket" placeholder="Ketones"><br>
-                    <input class="form-control" type="text" th:field="*{PT}" name="PT" placeholder="Prothrombin time"><br>
-                    <input class="form-control" type="text" th:field="*{PTT}" name="PTT" placeholder="Partial Prothrombin time"><br>
+                    <input class="form-control" type="text" th:field="*{MMR}" name="MMR" placeholder="Enter MMR #" required=""><br>
+                    <input class="form-control" type="text" th:field="*{PCV}" name="PCV" placeholder="Packed Cell Volume" required=""><br>
+                    <input class="form-control" type="text" th:field="*{TP}" name="TP" placeholder="Total Protein" required=""><br>
+                    <input class="form-control" type="text" th:field="*{AZO}" name="AZO" placeholder="Azostix" required=""><br>
+                    <input class="form-control" type="text" th:field="*{GLU}" name="GLU" placeholder="Glucose" required=""><br>
                     <button class="form-control btn btn-primary" type="submit" name="newEntrytSubmit">Submit</button><br>
                 </div>
             </form>

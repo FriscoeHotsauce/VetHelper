@@ -50,10 +50,11 @@ try
 
     String getEntries = "select * from entries where MMR = " + request.getParameter("id");
     ResultSet entries = statement.executeQuery(getEntries);
-    out.print("<h2 class='page-header'>Big Four</h2>");
+    out.print("<h2 class='page-header'>Data</h2>");
     out.print("<table class=table table-striped>" +
             "       <thead>" +
             "           <tr>" +
+            "               <th>Date</th>" +
             "               <th>PCV</th>" +
             "               <th>TP</th>" +
             "               <th>Azo</th>" +
@@ -64,9 +65,9 @@ try
     while(entries.next())
     {
     	out.print("<tr>");
-        for (int i = 2; i <= 5; i++)
+        for (int i = 2; i <= 6; i++)
         {
-        	out.print("<td>" + (entries.getString(i) == null ? "" : entries.getString(i)) + "</td>");
+        	out.print("<td>" + entries.getString(i) + "</td>");
         }
         out.print("</tr>");
     }

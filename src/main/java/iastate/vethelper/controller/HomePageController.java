@@ -3,6 +3,8 @@ package iastate.vethelper.controller;
 import iastate.vethelper.Entry;
 import iastate.vethelper.Patient;
 import iastate.vethelper.MmrNumber;
+import org.joda.time.DateTime;
+import org.joda.time.LocalDateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -43,12 +45,15 @@ public class HomePageController {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vethelper", "root" , "vethelper");
             Statement statement = con.createStatement();
-            String command = "insert into entry values(\""
+            String command = "insert into entries values(\""
                     + entry.getMMR() + "\" , \" "
+                    + LocalDateTime.now() + "\" , \" "
                     + entry.getPCV() + "\" , \" "
-                    + entry.getAzo() + "\" , \" "
-                    + entry.getGlu() + "\" , \" ";
-                statement.executeUpdate(command);
+                    + entry.getTP() + "\" , \" "
+                    + entry.getAZO() + "\" , \" "
+                    + entry.getGLU() + "\")";
+            System.out.println(command);
+            statement.executeUpdate(command);
         }
 
         catch(Exception exc)
