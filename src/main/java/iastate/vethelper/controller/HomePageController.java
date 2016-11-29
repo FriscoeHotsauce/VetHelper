@@ -49,7 +49,7 @@ public class HomePageController {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vethelper", "root" , "vethelper");
             Statement statement = con.createStatement();
             String command = "insert into patients values( \"" + patient.getName() + "\" , \" " + patient.getOwnerName() + "\" , \" " + Integer.parseInt(patient.getMMR()) + "\")";
-                statement.executeUpdate(command);
+            statement.executeUpdate(command);
         }
 
         catch(Exception exc)
