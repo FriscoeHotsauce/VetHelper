@@ -38,7 +38,7 @@ class annotated with @Controller and it will resolve to the JSP.
 
 ## Setting up the MySQL database
 Install MySQL
-- Go to [the MySQL downloads page](http://dev.mysql.com/downloads) and download MySQL Community Server
+- Go to [the MySQL downloads page](http://dev.mysql.com/downloads) and download MySQL Community Server MSI
 - Start the intallation. In the Type and Networking tab, enter 3306 in Port Number
 - In the Accounts and Roles tab, enter vethelper for MySQL RootPassword.
 - In the Windows Service tab, enter vethelper for Windows Service Name.
@@ -53,3 +53,4 @@ Create a connection
 
 Current tables:
 patients: name varchar(255), owner varchar(255), MMR int(255)
+entries: MMR int(255), date datetime, PCV int(255), TP int(255), AZO int(255), GLU int(255)
