@@ -1,7 +1,6 @@
 package iastate.vethelper.controller;
 
 import iastate.vethelper.Patient;
-import jdk.nashorn.internal.ir.RuntimeNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -34,7 +33,7 @@ public class HomePageController {
         return "Hello World!";
     }
 
-    @RequestMapping(value="/page/add", method = RequestMethod.POST)
+    @RequestMapping(value="/page", method = RequestMethod.POST)
     public String addPatient(@ModelAttribute(value="patient") Patient patient) {
         LOG.info("Post request reached");
         LOG.info("getName: " + patient.getName());

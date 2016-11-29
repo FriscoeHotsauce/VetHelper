@@ -113,7 +113,7 @@
         </div>
         <h1 class="page-header">Add New Entry</h1>
         <div class="col-md-12">
-            <form action="page/add" th:action="@(/page/add}" th:object="${patient}" method="post" align="center">
+            <form action="#" th:action="@(/page}" th:object="${patient}" method="post" align="center">
                 <div class="form-group">
                     <input class="form-control" type="text" th:field="*{name}" name="name" placeholder="Enter patient name"><br>
                     <input class="form-control" type="text" th:field="*{ownerName}"name="ownerName" placeholder="Enter owner name"><br>
