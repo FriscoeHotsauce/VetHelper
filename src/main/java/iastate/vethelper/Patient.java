@@ -8,6 +8,9 @@ public class Patient
     private String ownerName;
     private String name;
 
+
+    private int MMR;
+
     public String getOwnerName() {
         return ownerName;
     }
@@ -23,5 +26,14 @@ public class Patient
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getMMR() {
+        return MMR;
+    }
+
+    public void setMMR(int MMR) {
+        this.MMR = MMR;
+    }
+
 
 }

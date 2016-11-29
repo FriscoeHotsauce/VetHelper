@@ -1,5 +1,6 @@
+<%@ page import="iastate.vethelper.Patient" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>VetMedHelper</title>
 </head>
@@ -24,6 +25,5 @@
         <input type="text" th:field="*{ownerName}"name="ownerNameInput" value="Enter owner name here"><br>
         <input type="submit" name="newPatientSubmit" value="Submit"><br>
     </form>
-
 </p>
 </html>

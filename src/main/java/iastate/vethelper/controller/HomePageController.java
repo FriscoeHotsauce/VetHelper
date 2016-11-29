@@ -37,7 +37,8 @@ public class HomePageController {
         LOG.info("Post request reached");
         LOG.info("getName: " + patient.getName());
         LOG.info("getOwnerName: " + patient.getOwnerName());
-        return "result";
+        LOG.info("getMMR: " + patient.getMMR());
+        return "patient";
     }
 
 }
