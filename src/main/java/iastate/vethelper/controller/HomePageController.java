@@ -9,9 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import java.sql.*;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.sql.DriverManager;
 import java.util.Map;
 
 @Controller
@@ -24,10 +26,6 @@ public class HomePageController {
     public String homePage(Model model)
     {
         LOG.info("controller is being hit");
-        Patient patient = new Patient();
-        patient.setName("NAME");
-        patient.setOwnerName("OWNER NAME");
-        patient.setMMR("123");
         return "home";
     }
 
@@ -38,11 +36,27 @@ public class HomePageController {
 
     @RequestMapping(value="/page", method = RequestMethod.POST)
     public String addPatient(@ModelAttribute(value="patient") Patient patient) {
+
+
         LOG.info("Post request reached");
         LOG.info("getName: " + patient.getName());
         LOG.info("getOwnerName: " + patient.getOwnerName());
         LOG.info("getMMR: " + patient.getMMR());
-        return "patient";
+
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vethelper", "root" , "vethelper");
+            Statement statement = con.createStatement();
+            String command = "insert into patients values( \"" + patient.getName() + "\" , \" " + patient.getOwnerName() + "\" , \" " + Integer.parseInt(patient.getMMR()) + "\")";
+                statement.executeUpdate(command);
+        }
+
+        catch(Exception exc)
+        {
+            exc.printStackTrace();
+        }
+        return "home";
     }
 
 }
