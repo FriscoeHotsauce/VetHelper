@@ -20,7 +20,8 @@
 <body>
 <p>
 <p>
-<%  try
+<%
+try
 {
 
     Class.forName("com.mysql.jdbc.Driver");
@@ -29,17 +30,17 @@
     String command = "select * from patients where MMR = " + request.getParameter("id");
     System.out.println(command);
     ResultSet rs = statement.executeQuery(command);
-    while(rs.next())
-    {
-        System.out.println(rs.getString(1));
-    }
+    rs.next();
+    out.print("<h1>Patient Name</h1>" + rs.getString(1));
+    out.print(rs.getString(2));
+    out.print(rs.getString(3));
 }
 
 catch(Exception exc)
 {
     exc.printStackTrace();
-}%>
-${mmrNumber.id}
+}
+%>
 </p>
 </body>
 </html>
