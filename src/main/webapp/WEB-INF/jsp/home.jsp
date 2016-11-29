@@ -111,13 +111,15 @@
                 </table>
             </div>
         </div>
+        <h1 class="page-header">Add New Entry</h1>
         <div class="col-md-12">
-            Add New Patient
-            <form action="#" th:action="@(/page}" th:object="${patient}" method="post" align="center">
-                <input type="text" th:field="*{name}" name="name" value="Enter patient name here"><br>
-                <input type="text" th:field="*{ownerName}"name="ownerName" value="Enter owner name here"><br>
-                <input type="text" th:field="*{MMR}"name="MMR" value="Enter MMR name here"><br>
-                <input type="submit" name="newPatientSubmit" value="Submit"><br>
+            <form action="page/add" th:action="@(/page/add}" th:object="${patient}" method="post" align="center">
+                <div class="form-group">
+                    <input class="form-control" type="text" th:field="*{name}" name="name" placeholder="Enter patient name"><br>
+                    <input class="form-control" type="text" th:field="*{ownerName}"name="ownerName" placeholder="Enter owner name"><br>
+                    <input class="form-control" type="text" th:field="*{MMR}"name="MMR" placeholder="Enter MMR number"><br>
+                    <button class="form-control btn btn-primary" type="submit" name="newPatientSubmit">Submit<br>
+                </div>
             </form>
         </div>
     </div>
