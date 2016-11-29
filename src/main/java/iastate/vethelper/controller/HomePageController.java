@@ -1,6 +1,8 @@
 package iastate.vethelper.controller;
 
 import iastate.vethelper.Patient;
+import iastate.vethelper.MmrNumber;
+import iastate.vethelper.Entry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -54,6 +56,13 @@ public class HomePageController {
             exc.printStackTrace();
         }
         return "home";
+    }
+
+    @RequestMapping(value="/page/search", method = RequestMethod.POST)
+    public String searchPatient(@ModelAttribute(value="mmrNumber") MmrNumber mmrNumber ) {
+        LOG.info("Post request reached");
+        LOG.info("MMR ID: " + mmrNumber.getId());
+        return "patient";
     }
 
 }

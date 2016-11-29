@@ -38,8 +38,9 @@
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Help</a></li>
             </ul>
-            <form class="navbar-form navbar-right">
-                <input type="text" class="form-control" placeholder="Search MMR Number">
+            <form th:action="@(/page/search}" th:object="${mmrNumber}" method="post" navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search MMR Number" th:field="*{id}" name="id">
+                <button class="form-control btn btn-primary" type="submit" name="searchPatient"/>Search
             </form>
         </div>
     </div>
@@ -113,12 +114,12 @@
         </div>
         <h1 class="page-header">Add New Entry</h1>
         <div class="col-md-12">
-            <form action="#" th:action="@(/page}" th:object="${patient}" method="post" align="center">
+            <form th:action="@(/page}" th:object="${patient}" method="post" align="center">
                 <div class="form-group">
                     <input class="form-control" type="text" th:field="*{name}" name="name" placeholder="Enter patient name"><br>
                     <input class="form-control" type="text" th:field="*{ownerName}"name="ownerName" placeholder="Enter owner name"><br>
                     <input class="form-control" type="text" th:field="*{MMR}"name="MMR" placeholder="Enter MMR number"><br>
-                    <button class="form-control btn btn-primary" type="submit" name="newPatientSubmit">Submit<br>
+                    <button class="form-control btn btn-primary" type="submit" name="newPatientSubmit"/>Submit<br>
                 </div>
             </form>
         </div>

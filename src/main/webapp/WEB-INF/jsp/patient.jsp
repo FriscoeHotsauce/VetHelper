@@ -13,9 +13,7 @@
 </head>
 <body>
 <p>
-<p th:text="'Patient Name: ' + ${patient.name}" />
-<p th:text="'Owner Name: ' + ${patient.ownerName}" />
-<p th:text="'Patient MMR: ' + ${patient.MMR}" />
+<p th:text="'MMR: ' + ${mmrNumber.id}" />
     <br>
     <br>
     <br>
