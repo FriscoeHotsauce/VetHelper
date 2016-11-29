@@ -35,3 +35,21 @@ exposing rest end-points to save data to the database and such)
 - In order for the JSP to be loaded onto the apache server, it must be located in the webapp/WEB-INF/jsp package
 - The system is configured such that all you need to do is return the name of the JSP (don't need the extension) from a
 class annotated with @Controller and it will resolve to the JSP.
+
+## Setting up the MySQL database
+Install MySQL
+- Go to [the MySQL downloads page](http://dev.mysql.com/downloads) and download MySQL Community Server
+- Start the intallation. In the Type and Networking tab, enter 3306 in Port Number
+- In the Accounts and Roles tab, enter vethelper for MySQL RootPassword.
+- In the Windows Service tab, enter vethelper for Windows Service Name.
+- Finsh  the installation with defaults
+
+Create a connection
+- Open MySql workbench and add a connection. Name the connection vethelper.
+- Double click on the connection to open up a tab for it. 
+- One the left side of the screen under "SCHEMAS", right click in a blank area and click create schema.
+- Name the schema vethelper
+- Use the shell or however means you prefer to configure the database. 
+
+Current tables:
+patients: name varchar(255), owner varchar(255), MMR int(255)
