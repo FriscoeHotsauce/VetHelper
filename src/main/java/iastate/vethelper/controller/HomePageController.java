@@ -58,7 +58,7 @@ public class HomePageController {
         return "home";
     }
 
-    @RequestMapping(value="/page/search", method = RequestMethod.POST)
+    @RequestMapping(value="/search", method = RequestMethod.POST)
     public String searchPatient(@ModelAttribute(value="mmrNumber") MmrNumber mmrNumber ) {
         LOG.info("Post request reached");
         LOG.info("MMR ID: " + mmrNumber.getId());
