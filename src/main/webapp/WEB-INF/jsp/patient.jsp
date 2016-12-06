@@ -2,19 +2,11 @@
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="org.slf4j.Logger" %>
-<%@ page import="org.slf4j.LoggerFactory" %>
-<%@ page import="iastate.vethelper.controller.HomePageController" %><%--
-  Created by IntelliJ IDEA.
-  User: Thomas Kearney
-  Date: 11/27/2016
-  Time: 1:15 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="org.joda.time.DateTime" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
-    <head>
         <title>Login</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <!-- Latest compiled and minified CSS -->
@@ -29,9 +21,30 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
                 crossorigin="anonymous"></script>
-    </head>
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Vet Helper</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <div class="navbar-form navbar-right">
+                <a class="form-control btn btn-primary"  href="/home/page">Back</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
 <p>
 <p>
 <%
@@ -44,13 +57,13 @@ try
     String getPatient = "select * from patients where MMR = " + request.getParameter("id");
     ResultSet rs = statement.executeQuery(getPatient);
     rs.next();
-    out.print("<h2 class='page-header'>Patient Name: " + rs.getString(1) + "</h2>");
-    out.print("<h2 class='page-header'>Owner Name: " + rs.getString(2) + "</h2>");
-    out.print("<h2 class='page-header'>MMR: " + rs.getString(3) + "</h2>");
+    out.print("<div class='row container-fluid'>");
+    out.print("<h3 class='col col-sm-4'>Patient Name: " + rs.getString(1) + "</h3>");
+    out.print("<h3 class='col col-sm-4'>Owner Name: " + rs.getString(2) + "</h3>");
+    out.print("<h3 class='col col-sm-4'>MMR: " + rs.getString(3) + "</h3></div>");
 
     String getEntries = "select * from entries where MMR = " + request.getParameter("id");
     ResultSet entries = statement.executeQuery(getEntries);
-    out.print("<h2 class='page-header'>Data</h2>");
     out.print("<table class=table table-striped>" +
             "       <thead>" +
             "           <tr>" +
@@ -67,7 +80,7 @@ try
     	out.print("<tr>");
         for (int i = 2; i <= 6; i++)
         {
-        	out.print("<td>" + entries.getString(i) + "</td>");
+            out.print("<td>" + entries.getString(i) + "</td>");
         }
         out.print("</tr>");
     }
