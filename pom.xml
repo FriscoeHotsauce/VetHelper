@@ -6,7 +6,7 @@
     <groupId>com.khoubyari</groupId>
     <artifactId>spring-boot-rest-example</artifactId>
     <version>0.3.0</version>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
     <description>Iowa State VetMed Helper</description>
 
     <parent>

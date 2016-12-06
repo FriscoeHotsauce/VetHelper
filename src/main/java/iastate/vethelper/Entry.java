@@ -1,8 +1,5 @@
 package iastate.vethelper;
 
-/**
- * Created by thomaskearney1 on 11/28/16.
- */
 public class Entry {
     private String MMR;
     private String date;
@@ -25,6 +22,14 @@ public class Entry {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getPCV() {
+        return PCV;
+    }
+
+    public void setPCV(String PCV) {
+        this.PCV = PCV;
     }
 
     public String getTP() {
@@ -50,15 +55,4 @@ public class Entry {
     public void setGLU(String GLU) {
         this.GLU = GLU;
     }
-
-
-    public String getPCV() {
-        return PCV;
-    }
-
-    public void setPCV(String PCV) {
-        this.PCV = PCV;
-    }
-
-
 }
