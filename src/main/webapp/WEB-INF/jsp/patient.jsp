@@ -4,7 +4,6 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="org.joda.time.DateTime" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <html>
 <head>
         <title>Login</title>
@@ -60,7 +59,7 @@ try
     out.print("<div class='row container-fluid'>");
     out.print("<h3 class='col col-sm-4'>Patient Name: " + rs.getString(1) + "</h3>");
     out.print("<h3 class='col col-sm-4'>Owner Name: " + rs.getString(2) + "</h3>");
-    out.print("<h3 class='col col-sm-4'>MMR: " + rs.getString(3) + "</h3></div>");
+    out.print("<h3 class='col col-sm-4'>MR: " + rs.getString(3) + "</h3></div>");
 
     String getEntries = "select * from entries where MMR = " + request.getParameter("id");
     ResultSet entries = statement.executeQuery(getEntries);
