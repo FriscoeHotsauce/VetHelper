@@ -46,7 +46,7 @@ try
     rs.next();
     out.print("<h2 class='page-header'>Patient Name: " + rs.getString(1) + "</h2>");
     out.print("<h2 class='page-header'>Owner Name: " + rs.getString(2) + "</h2>");
-    out.print("<h2 class='page-header'>MMR: " + rs.getString(3) + "</h2>");
+    out.print("<h2 class='page-header'>MR ID: " + rs.getString(3) + "</h2>");
 
     String getEntries = "select * from entries where MMR = " + request.getParameter("id");
     ResultSet entries = statement.executeQuery(getEntries);

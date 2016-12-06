@@ -33,7 +33,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form action="search" th:object="${mmrNumber}" method="get" class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search MMR Number" th:field="*{id}" name="id" required="">
+            <input type="text" class="form-control" placeholder="Search MR Number" th:field="*{id}" name="id" required="">
             <button class="form-control btn btn-primary" type="submit">Search</button>
         </form>
         </div>
@@ -47,7 +47,7 @@
         <div class="col-md-12">
             <form action="#" th:action="@(/page}" th:object="${entry}" method="post">
                 <div class="form-group">
-                    <input class="form-control" type="text" th:field="*{MMR}" name="MMR" placeholder="Enter MMR #" required=""><br>
+                    <input class="form-control" type="text" th:field="*{MMR}" name="MMR" placeholder="Enter MR #" required=""><br>
                     <input class="form-control" type="text" th:field="*{PCV}" name="PCV" placeholder="Packed Cell Volume" required=""><br>
                     <input class="form-control" type="text" th:field="*{TP}" name="TP" placeholder="Total Protein" required=""><br>
                     <input class="form-control" type="text" th:field="*{AZO}" name="AZO" placeholder="Azostix" required=""><br>
